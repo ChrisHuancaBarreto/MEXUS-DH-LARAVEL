@@ -7,7 +7,7 @@
 @section('content')
 <div class="create-product" style="margin:50px;">
     <h3 style="text-align:center;font-size:30px;"> Cargar Producto </h3>
-<form method="POST" action="{{route('product.store')}}">
+<form method="POST" action="{{route('products.store')}}">
         @csrf
         <div class="form-group">
           <label for="product_name">Nombre de Producto:</label>

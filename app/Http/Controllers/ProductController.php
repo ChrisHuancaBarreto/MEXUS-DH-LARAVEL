@@ -37,6 +37,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)  /* guarda el nuevo producto */
     {
+
         $product_name=request('product_name');
         $product_description=request('product_description');
         $product_price=request('product_price');
@@ -52,7 +53,8 @@ class ProductController extends Controller
             'slug'=>$product_slug,
         ]);
 
-        return redirect()->route('products.index');
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -63,7 +65,10 @@ class ProductController extends Controller
      */
     public function show($id) /* muestra el producto con el id*/
     {
-        //
+        $producto = Product::find($id);
+        return view('show',[
+            'product' => $producto,
+        ]);
     }
 
     /**
@@ -74,7 +79,9 @@ class ProductController extends Controller
      */
     public function edit($id) /* modifica el producto */ 
     {
-        //
+        return view('product.edit',[
+            'product'=>$id
+        ]);
     }
 
     /**
@@ -97,6 +104,6 @@ class ProductController extends Controller
      */
     public function destroy($id)  /*  elimina el producto */
     {
-        //
+
     }
 }

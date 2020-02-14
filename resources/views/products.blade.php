@@ -23,7 +23,7 @@
 
                       <div class="btn-product">
                         <a href="#" class="btn btn-primary">Comprar</a>
-                        <a href="#" class="btn btn-primary">Ver</a>
+                        <a href="{{route('product.show',$product)}}" class="btn btn-primary">Ver</a>
                         <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
                       </div>
                     </div>

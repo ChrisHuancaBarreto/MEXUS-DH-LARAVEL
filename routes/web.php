@@ -12,10 +12,15 @@
 */
 
 
-Route::get('productos','productController@index')->name('products.index');
-Route::get('/productos/crear','productController@create')->name('products.create');
-Route::post('productos','productController@store')->name('products.store');
-Route::get('/productos/{producto}','productController@show')->name('products.show');
+Route::get('productos','productController@index')->name('product.index');
+
+Route::get('/productos/crear','productController@create')->name('product.create');
+
+Route::get('/productos/{producto}/editar','productController@edit')->name('product.edit');
+
+Route::post('productos','productController@store')->name('product.store');
+
+Route::get('/productos/{id}','productController@show')->name('product.show');
 
 
 Auth::routes();
